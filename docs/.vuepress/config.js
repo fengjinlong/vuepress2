@@ -51,7 +51,15 @@ module.exports = {
         title: 'CSS',
         collapsable: true,
         children: [
-          '/css/one',
+          ['/css/模仿'],
+          ['/css/css']
+        ]
+      },
+      {
+        title: 'HTML',
+        collapsable: true,
+        children: [
+          ['/html/index']
         ]
       },
       {
