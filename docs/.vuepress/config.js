@@ -51,15 +51,15 @@ module.exports = {
         title: 'CSS',
         collapsable: true,
         children: [
-          ['/css/模仿'],
-          ['/css/css']
+          ['/css/模仿', 'mf'],
+          ['/css/css', 'css']
         ]
       },
       {
         title: 'HTML',
         collapsable: true,
         children: [
-          ['/html/index']
+          ['/html/index1', 'html']
         ]
       },
       {
