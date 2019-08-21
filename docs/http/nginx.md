@@ -140,3 +140,32 @@ http #http块
 <img src="./25.png">
 <img src="./26.png">
 <img src="./27.png">
+
+## 常用笔记
+1. nginx常用命令
+>+ nginx -s stop 强制关闭 
+>+ nginx -s quit 安全关闭 
+>+ nginx -s reload 改变配置文件的时候，重启nginx工作进程，来时配置文件生效 
+>+ nginx -s reopen 打开日志文件
+>+ cd /usr/local/etc/  mac 进入配置文件 
+>+ cp nginx.config nginx.config.back  复制配置文件
+
+2. 反向代理 负载均衡
+```
+http {
+    upstream myser {
+        ip_hash;
+        server ip1 weight=2;
+        server ip2;
+    }
+    server {
+        listen 8080;
+        location / {
+            proxy_pass http://myser
+        }
+    }
+}
+<!-- ip_hash 相同用户访问相同服务器 -->
+<!-- weight 权重 -->
+<!-- 配置文件命名问 nginx.conf  便于运维去扒 -->
+```
