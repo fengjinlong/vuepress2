@@ -69,6 +69,13 @@ module.exports = {
           ['/http/http基础', '基础'],
           ['/http/nginx', 'nginx']
         ]
+      },
+      {
+        title: 'yarn',
+        collapsable: true,
+        children: [
+          ['/yarn/基础', '基础']
+        ]
       }
     ]
   }
