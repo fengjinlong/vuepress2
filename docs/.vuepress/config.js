@@ -81,15 +81,15 @@ module.exports = {
         title: 'php',
         collapsable: true,
         children: [
-          ['/php/readme', 'php相关']
+          ['/php/php', 'php相关']
         ]
       },
       {
         title: 'node',
         collapsable: true,
         children: [
-          ['/node/1.md', 'node基础'],
-          ['/node/2.md', '程序相关']
+          ['/node/1', 'node基础'],
+          ['/node/2', '程序相关']
         ]
       }
     ]

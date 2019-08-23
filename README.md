@@ -13,5 +13,4 @@ features:
 footer: MIT Licensed | Copyright © 2018-present Evan You
 --- -->
 
-
-sudo chmod -R 777 assets   更改assets权限
+## 不能用readme.md在文件夹
