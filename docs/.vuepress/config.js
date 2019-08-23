@@ -91,7 +91,14 @@ module.exports = {
           ['/node/1', 'node基础'],
           ['/node/2', '程序相关']
         ]
-      }
+      },
+      {
+        title: 'mac',
+        collapsable: true,
+        children: [
+          ['/mac/vscode', 'vscode快捷键']
+        ]
+      },
     ]
   }
 }
