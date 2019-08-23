@@ -88,8 +88,8 @@ module.exports = {
         title: 'node',
         collapsable: true,
         children: [
-          ['/node/基础', 'node基础'],
-          ['/node/程序', '程序相关']
+          ['/node/1.md', 'node基础'],
+          ['/node/2.md', '程序相关']
         ]
       }
     ]
