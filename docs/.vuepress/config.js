@@ -76,6 +76,21 @@ module.exports = {
         children: [
           ['/yarn/基础', '基础']
         ]
+      },
+      {
+        title: 'php',
+        collapsable: true,
+        children: [
+          ['/php/readme', 'php相关']
+        ]
+      },
+      {
+        title: 'node',
+        collapsable: true,
+        children: [
+          ['/node/基础', 'node基础'],
+          ['/node/程序', '程序相关']
+        ]
       }
     ]
   }
