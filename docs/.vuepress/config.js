@@ -99,6 +99,13 @@ module.exports = {
           ['/mac/vscode', 'vscode快捷键']
         ]
       },
+      {
+        title: '手写代码',
+        collapsable: true,
+        children: [
+          ['/手写代码系列/1', '手写代码']
+        ]
+      }
     ]
   }
 }
