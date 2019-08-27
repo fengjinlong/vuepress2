@@ -52,3 +52,7 @@ rename 1.txt 2.txt
 
 ## 权限
 sudo chmod -R 777 assets   更改assets权限 
+
+## mac 执行 .sh
+赋予脚本可执行权限，输入命令：chmod +x test1.sh 回车(第一次需要此步骤)
+./test1.sh
