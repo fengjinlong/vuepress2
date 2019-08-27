@@ -100,6 +100,13 @@ module.exports = {
         ]
       },
       {
+        title: 'react',
+        collapsable: true,
+        children: [
+          ['/react/demo', 'demo']
+        ]
+      },
+      {
         title: '手写代码',
         collapsable: true,
         children: [
