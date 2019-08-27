@@ -43,8 +43,10 @@ module.exports = {
         title: 'JavaScript', // 侧边栏名称
         collapsable: true, // 可折叠
         children: [
-          '/js/1',
-          '/js/2',
+          '/js/es5',
+          '/js/es6',
+          '/js/语言精髓',
+          '/js/深拷贝'
         ]
       },
       {
