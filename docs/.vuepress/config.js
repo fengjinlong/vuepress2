@@ -65,6 +65,13 @@ module.exports = {
         ]
       },
       {
+        title: 'linux',
+        collapsable: true,
+        children: [
+          ['/linux/index', '文件操作']
+        ]
+      },
+      {
         title: 'http',
         collapsable: true,
         children: [
