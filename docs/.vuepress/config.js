@@ -112,6 +112,13 @@ module.exports = {
         children: [
           ['/手写代码系列/1', '手写代码']
         ]
+      },
+      {
+        title: 'git',
+        collapsable: true,
+        children: [
+          ['/git/basic', '基本操作']
+        ]
       }
     ]
   }
