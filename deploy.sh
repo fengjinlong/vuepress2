@@ -1,5 +1,10 @@
 
 set -e
+
+git add .
+git commit -m 'add'
+git push
+
 npm run docs:build
 cd docs/.vuepress/dist
 
