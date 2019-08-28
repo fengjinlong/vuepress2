@@ -133,7 +133,8 @@ module.exports = {
         title: '博文',
         collapsable: true,
         children: [
-          ['/博文/blog', '学不进去']
+          '/博文/blog',
+           '学不进去'
         ]
       }
     ]
