@@ -128,6 +128,13 @@ module.exports = {
         children: [
           ['/git/basic', '基本操作']
         ]
+      },
+      {
+        title: '博文',
+        collapsable: true,
+        children: [
+          ['/博文/blog', '学不进去']
+        ]
       }
     ]
   }
