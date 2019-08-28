@@ -134,7 +134,7 @@ module.exports = {
         collapsable: true,
         children: [
           '/博文/blog',
-           '学不进去'
+           '/博文/学不进去'
         ]
       }
     ]
