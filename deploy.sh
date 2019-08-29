@@ -3,8 +3,7 @@ set -e
 
 git add .
 
-cur_sec=`date '+%s'`
-git commit -m `date '+%s'`
+git commit -m `date --iso-8601='m'`
 
 git push
 
