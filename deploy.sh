@@ -10,7 +10,10 @@ cd docs/.vuepress/dist
 
 git init
 git add -A
-git commit -m 'deploy'
+
+dataline=$(./coMes.txt)
+
+git commit -m dataline
 
 git push -f git@github.com:fengjinlong/fengjinlong.github.io.git master
 
