@@ -121,7 +121,7 @@ module.exports = {
         children: [
           ['/interview/js', 'js'],
           ['/interview/vue', 'vue'],
-          ['/interview/css', css]
+          ['/interview/css', 'css']
         ]
       },
       {
