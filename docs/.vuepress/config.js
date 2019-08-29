@@ -119,17 +119,17 @@ module.exports = {
         title: 'interview',
         collapsable: true,
         children: [
-          '/interview/js',
-          '/interview/vue',
-          '/interview/css'
+          ['/interview/js', 'js'],
+          ['/interview/vue', 'vue'],
+          ['/interview/css', css]
         ]
       },
       {
         title: 'functional',
         collapsable: true,
         children: [
-          '/functional/base',
-          '/functional/博文'
+          ['/functional/base', '函子'],
+          ['/functional/博文', '相关博文']
         ]
       },
       {
