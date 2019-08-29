@@ -68,7 +68,8 @@ module.exports = {
         title: 'linux',
         collapsable: true,
         children: [
-          ['/linux/in', '文件操作']
+          ['/linux/in', '文件操作'],
+          ['/linux/服务', '服务器登陆']
         ]
       },
       {
