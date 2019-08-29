@@ -116,6 +116,23 @@ module.exports = {
         ]
       },
       {
+        title: 'interview',
+        collapsable: true,
+        children: [
+          '/interview/js',
+          '/interview/vue',
+          '/interview/css'
+        ]
+      },
+      {
+        title: 'functional',
+        collapsable: true,
+        children: [
+          '/functional/base',
+          '/functional/博文'
+        ]
+      },
+      {
         title: '手写代码',
         collapsable: true,
         children: [
