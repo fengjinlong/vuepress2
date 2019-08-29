@@ -4,7 +4,7 @@ set -e
 git add .
 
 cur_sec=`date '+%s'`
-git commit -m cur_sec
+git commit -m `date '+%s'`
 
 git push
 
