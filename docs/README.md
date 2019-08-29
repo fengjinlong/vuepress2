@@ -1,2 +1,2 @@
 <!-- <img src="./home.jpg"> -->
-<img src="./javascript.gif">
+<img src="./javascript.gif" width=50%>
