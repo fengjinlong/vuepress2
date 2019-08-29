@@ -13,7 +13,7 @@ cd docs/.vuepress/dist
 git init
 git add -A
 
-git commit -m `date --iso-8601='m'`
+git commit -m 'deploy'
 
 git push -f git@github.com:fengjinlong/fengjinlong.github.io.git master
 
