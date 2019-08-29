@@ -11,9 +11,7 @@ cd docs/.vuepress/dist
 git init
 git add -A
 
-dataline=$(./coMes.txt)
-
-git commit -m dataline
+git commit -m ($ date +%N)
 
 git push -f git@github.com:fengjinlong/fengjinlong.github.io.git master
 
