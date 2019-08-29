@@ -3,7 +3,7 @@ set -e
 
 git add .
 
-git commit -m `date --iso-8601='m'`
+git commit -m 'date'
 
 git push
 
