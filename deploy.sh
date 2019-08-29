@@ -11,7 +11,7 @@ cd docs/.vuepress/dist
 git init
 git add -A
 
-git commit -m '$ date +%N'
+git commit -m 'xxxxxxxxxxxxxx'
 
 git push -f git@github.com:fengjinlong/fengjinlong.github.io.git master
 
