@@ -2,7 +2,10 @@
 set -e
 
 git add .
-git commit -m 'add'
+
+cur_sec=`date '+%s'`
+git commit -m cur_sec
+
 git push
 
 npm run docs:build
