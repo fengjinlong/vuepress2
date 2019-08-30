@@ -22,6 +22,12 @@ pwd
 rm 1.txt
 删词目录
 rm -r bbb
+-r 就是向下递归，不管有多少级目录，一并删除
+-f 就是直接强行删除，不作任何提示的意思
+
+删除文件夹实例：
+rm -rf /var/log/httpd/access
+将会删除/var/log/httpd/access目录以及其下所有文件、文件夹
 
 新建文件
 touch index.js
@@ -47,8 +53,7 @@ cd ~ 进入桌面
 3. 选择Edit进入DHCP配置：
 4. 选择IPv4 CONFIGURATION为Automatic，并且勾选Automatically connect选项。
 5. 最后返回命令行，输入:service network restart
-6. 有了网络连接后，人生一下子就光明了！在CentOS 7 minimal中，默认net-tools是没有预先安装 的。现在有了网络连接后，就可以使用
-yum install net-tools
+6. 有了网络连接后，人生一下子就光明了！在CentOS 7 minimal中，默认net-tools是没有预先安装 的。现在有了网络连接后，就可以使用yum install net-tools
 
 
 ## windows
