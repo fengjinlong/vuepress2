@@ -31,6 +31,26 @@ vi index.js
 cat index.js
 ```
 
+linux 下载 加 -c支持断电续传
+wget -c url
+
+解压
+unzip xxx.zip
+
+cd / 进入根目录 
+cd ~ 进入桌面
+
+## centOS 设置网路
+
+1. 首先需要用 nmtui 命令进入 Network Manager，如下
+2. 选择 Edit a connection 来配置你的网络连接：
+3. 选择Edit进入DHCP配置：
+4. 选择IPv4 CONFIGURATION为Automatic，并且勾选Automatically connect选项。
+5. 最后返回命令行，输入:service network restart
+6. 有了网络连接后，人生一下子就光明了！在CentOS 7 minimal中，默认net-tools是没有预先安装 的。现在有了网络连接后，就可以使用
+yum install net-tools
+
+
 ## windows
 ```
 dir 查看当前所有
