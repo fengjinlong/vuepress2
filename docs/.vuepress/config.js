@@ -148,6 +148,13 @@ module.exports = {
         ]
       },
       {
+        title: 'JSON',
+        collapsable: true,
+        children: [
+          ['/JSON/j', '基本操作']
+        ]
+      },
+      {
         title: '博文',
         collapsable: true,
         children: [
