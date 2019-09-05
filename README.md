@@ -31,3 +31,5 @@ netstat -an | grep 3000  查看3000
 
 pm2
 https://www.cnblogs.com/hai-cheng/p/8690115.html
+
+https://blog.csdn.net/cs380637384/article/details/82682799
