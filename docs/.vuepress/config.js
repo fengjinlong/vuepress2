@@ -69,6 +69,7 @@ module.exports = {
         collapsable: true,
         children: [
           ['/linux/in', '文件操作'],
+          ['/linux/jenkins', 'jenkins'],
           ['/linux/服务', '服务器登陆']
         ]
       },
@@ -99,7 +100,8 @@ module.exports = {
         collapsable: true,
         children: [
           ['/node/1', 'node基础'],
-          ['/node/2', '程序相关']
+          ['/node/2', 'node基础'],
+          ['/node/km2', 'km2']
         ]
       },
       {

@@ -14,22 +14,3 @@ footer: MIT Licensed | Copyright © 2018-present Evan You
 --- -->
 
 ## 不能用readme.md在文件夹
-
-
-
-设置私钥 
-https://www.jianshu.com/p/ed0edb93e234
-
-git@github.com:fengjinlong/vueCli3.git
-
-配置Jenkins邮件通知
-https://zhuanlan.zhihu.com/p/22810691
-
-https://www.cnblogs.com/imyalost/p/8781759.html
-
-netstat -an | grep 3000  查看3000
-
-pm2
-https://www.cnblogs.com/hai-cheng/p/8690115.html
-
-https://blog.csdn.net/cs380637384/article/details/82682799

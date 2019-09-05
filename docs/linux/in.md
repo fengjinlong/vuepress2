@@ -55,6 +55,13 @@ cd ~ 进入桌面
 5. 最后返回命令行，输入:service network restart
 6. 有了网络连接后，人生一下子就光明了！在CentOS 7 minimal中，默认net-tools是没有预先安装 的。现在有了网络连接后，就可以使用yum install net-tools
 
+## Mac 上传文件到 Linux 服务器
+scp 文件名 用户名@服务器ip:目标路径
+scp -r 文件夹目录 用户名@服务器ip:目标路径
+
+## Linux 服务器下载文件到 Mac
+scp 用户名@服务器ip:文件路径 目标路径
+scp -r 用户名@服务器ip:文件路径 目标路径
 
 ## windows
 ```
