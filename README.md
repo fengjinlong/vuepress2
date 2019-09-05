@@ -26,3 +26,8 @@ git@github.com:fengjinlong/vueCli3.git
 https://zhuanlan.zhihu.com/p/22810691
 
 https://www.cnblogs.com/imyalost/p/8781759.html
+
+netstat -an | grep 3000  查看3000
+
+pm2
+https://www.cnblogs.com/hai-cheng/p/8690115.html
