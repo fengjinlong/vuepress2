@@ -311,6 +311,7 @@ var t = y.map(function (ele) {
 console.log(t)
 console.log(t[1])
 ```
+```
 Function 构造器本身也是个Function。他的 length 属性值为 1 。该属性 Writable: false, Enumerable: false, Configurable: true.
 
 Function.prototype  对象的 length 属性值为 0 。
@@ -338,6 +339,7 @@ function yd (a,b,c=3) {
 }
 yd(1,1,1)
 
+```
 ```
 在严格模式下，剩余参数、默认参数和解构赋值参数的存在不会改变 arguments对象的行为，但是在非严格模式下就有所不同了。
 
@@ -404,7 +406,6 @@ fun()
     console.log('abc11')
   </script>
   ```
-  ```
       let ob = {
       a: 1,
       b: function () {
@@ -437,7 +438,7 @@ fun()
     ob.b.bind(obj)()
     ob.c.bind(obj)()
     ob.d.bind(obj)()
-    ```
+
     ```
         if (false) {
       var a = 1
@@ -448,6 +449,7 @@ fun()
     console.log(fun) // undefined
     console.log(a)  // undefined
     ```
+
     ```
     function p () {
       return p
@@ -456,3 +458,30 @@ fun()
     console.log(new p())
     console.log(p)
     ```
+
+  ## 对比请求方法
+
+    fetch
+    1.IE浏览器完全不支持fetch，移动端的很多浏览器也不支持,所以，如果要在这些浏览器上使用Fetch，就必须使用fetch polyfil
+    2.cookie传递必须在header参数里面加上credentials: 'include'，才会如xhr一样将当前cookies带到请求中去
+    3.fetch和xhr的不同：fetch虽然底层，但是还是缺少一些常用xhr有的方法，比如能够取消请求（abort）方法。fetch在服务器返回4xx、5xx时是不会抛出错误的，这里需要手动通过，通过response中的ok字段和status字段来判断。fetch不支持abort，不支持超时控制
+    4.Fetch 请求默认是不带 cookie 的，需要设置 fetch(url, {credentials: 'include'})；服务器返回 400，500 错误码时并不会 reject，只有网络错误这些导致请求不能完成时，fetch 才会被 reject。
+    jQuery ajax
+    1.本身是针对MVC的编程,不符合现在前端MVVM的浪潮
+    2.基于原生的XHR开发，XHR本身的架构不清晰，已经有了fetch的替代方案
+    3.JQuery整个项目太大 
+    axios
+    1.从 node.js 创建 http 请求
+    2.支持 Promise API
+    3.客户端支持防止CSRF
+    4.提供了一些并发请求的接口（重要，方便了很多的操作）
+
+    axios 是一个基于Promise 用于浏览器和 nodejs 的 HTTP 客户端，它本身具有以下特征：
+    1.从浏览器中创建 XMLHttpRequest
+    2.从 node.js 发出 http 请求
+    3.支持 Promise API
+    4.拦截请求和响应
+    5.转换请求和响应数据
+    6.取消请求
+    7.自动转换JSON数据
+    8.客户端支持防止CSRF/XSRF

@@ -164,6 +164,13 @@ module.exports = {
         ]
       },
       {
+        title: '优化',
+        collapsable: true,
+        children: [
+          ['/优化/seo', 'seo']
+        ]
+      },
+      {
         title: '博文',
         collapsable: true,
         children: [
