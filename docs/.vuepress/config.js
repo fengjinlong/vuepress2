@@ -82,6 +82,14 @@ module.exports = {
         ]
       },
       {
+        title: '性能',
+        collapsable: true,
+        children: [
+          ['/性能/1', '基础'],
+          ['/性能/启示', '启示']
+        ]
+      },
+      {
         title: 'yarn',
         collapsable: true,
         children: [
