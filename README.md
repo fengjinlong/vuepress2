@@ -16,3 +16,9 @@ footer: MIT Licensed | Copyright © 2018-present Evan You
 ## 不能用readme.md在文件夹
 
 ## 珠峰webpack代码 https://github.com/zhufengzhufeng/webpack-trainhttps://github.com/zhufengzhufeng/webpack-train
+
+
+export const userInfo = state => state.userInfo
+export const userInfo = state => state.userInfo
+对应
+import * as getters from './getters'
