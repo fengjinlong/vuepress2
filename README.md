@@ -22,3 +22,5 @@ export const userInfo = state => state.userInfo
 export const userInfo = state => state.userInfo
 对应
 import * as getters from './getters'
+
+startBtn.classList.add('qqq')
