@@ -24,3 +24,6 @@ export const userInfo = state => state.userInfo
 import * as getters from './getters'
 
 startBtn.classList.add('qqq')
+
+安装wrk
+https://blog.csdn.net/qq_41030861/article/details/90553510
