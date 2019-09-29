@@ -155,13 +155,13 @@ http #http块
 http {
     upstream myser {
         ip_hash;
-        server ip1 weight=2;
-        server ip2;
+        server http://www.hellojs.xyz;
+        server http://47.104.160.13:3000/;
     }
     server {
         listen 8080;
         location / {
-            proxy_pass http://myser
+            proxy_pass http://114.116.243.163
         }
     }
 }
