@@ -120,6 +120,13 @@ module.exports = {
         ]
       },
       {
+        title: 'typescript',
+        collapsable: true,
+        children: [
+          ['/typescript/ts.md', 'typescript']
+        ]
+      },
+      {
         title: 'mac',
         collapsable: true,
         children: [
