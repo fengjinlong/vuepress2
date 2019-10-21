@@ -137,7 +137,8 @@ module.exports = {
         title: 'react',
         collapsable: true,
         children: [
-          ['/react/demo', 'demo']
+          ['/react/demo', 'demo'],
+          ['/react/hookBase', 'hookBase']
         ]
       },
       {
