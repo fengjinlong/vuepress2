@@ -108,3 +108,83 @@ npm install eslint-plugin-react-hooks --save-dev
   }
 }
 ```
+
+## useContext
+
+>标准方式
+```
+import React from "react";
+import ReactDOM from "react-dom";
+
+// Create a Context
+const NumberContext = React.createContext();
+// It returns an object with 2 values:
+// { Provider, Consumer }
+
+function App() {
+  // Use the Provider to make a value available to all
+  // children and grandchildren
+  return (
+    <NumberContext.Provider value={42}>
+      <div>
+        <Display />
+      </div>
+    </NumberContext.Provider>
+  );
+}
+
+function Display() {
+  // Use the Consumer to grab the value from context
+  // Notice this component didn't get any props!
+  return (
+    <NumberContext.Consumer>
+      {value => <div>The answer is {value}.</div>}
+    </NumberContext.Consumer>
+  );
+}
+
+ReactDOM.render(<App />, document.querySelector("#root"));
+```
+>hooks方式
+```
+import React, { useState , createContext , useContext } from 'react';
+
+let CountContext = createContext()
+
+<CountContext.Provider value={count}>
+    <Counter />
+</CountContext.Provider>
+
+function Counter(){
+    const count = useContext(CountContext)  //一句话就可以得到count
+    return (<h2>{count}</h2>)
+}
+
+```
+>hook嵌套
+```
+import React, { useState , createContext , useContext } from 'react';
+
+let CurrentUser = createContext()
+let Notifications = createContext()
+
+<CurrentUser.Provider value={aaa}>
+  <Notifications.Provider value={bbb}>
+    <HeaderBar/>
+  </Notifications>
+</CurrentUser>
+
+
+
+function HeaderBar() {
+  const aaa = useContext(CurrentUser);
+  const bbb = useContext(Notifications);
+
+  return (
+    <header>
+      Welcome back, {aaa}!
+      You have {bbb} notifications.
+    </header>
+  );
+}
+```
