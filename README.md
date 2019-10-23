@@ -40,3 +40,6 @@ https://github.com/muwoo/blogs
 ts
 https://jkchao.github.io/typescript-book-chinese/#why
 https://jkchao.github.io/typescript-book-chinese/
+
+html5手机端兼容
+https://juejin.im/post/5dafc3df5188257a63539c64
