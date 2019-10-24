@@ -1,4 +1,5 @@
-## Decorators 是ES7中添加的JavaScript新特性
+## Decorators
+>Decorators 是ES7中添加的JavaScript新特性
 
 >装饰器接收一个参数，也就是我们被装饰的目标方法，处理完扩展的内容后再返回一个方法，供以后调用，同时也失去了对原方法对象的访问。
 >装饰器和被装饰者之间通过 @ 符进行连接。
