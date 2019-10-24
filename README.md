@@ -43,3 +43,15 @@ https://jkchao.github.io/typescript-book-chinese/
 
 html5手机端兼容
 https://juejin.im/post/5dafc3df5188257a63539c64
+
+
+webpack优化
+https://juejin.im/post/5d614dc96fb9a06ae3726b3e
+https://juejin.im/post/5badd0c5e51d450e4437f07a
+
+1.5万字概括ES6全部特性(看图就能记下，值得收藏)
+https://juejin.im/post/5d9bf530518825427b27639d#heading-0
+
+
+灵活运用JS开发技巧
+https://juejin.im/post/5cc7afdde51d456e671c7e48

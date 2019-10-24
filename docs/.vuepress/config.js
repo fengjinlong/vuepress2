@@ -43,6 +43,9 @@ module.exports = {
         title: 'JavaScript', // 侧边栏名称
         collapsable: true, // 可折叠
         children: [
+          '/js/defineProperty',
+          '/js/Decorator',
+          '/js/Decorator2',
           '/js/模块',
           '/js/es5',
           '/js/es6',
