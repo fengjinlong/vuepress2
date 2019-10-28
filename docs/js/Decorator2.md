@@ -320,3 +320,46 @@ const method = descriptor.value;
 但是如果我们修饰的是类的实例属性，因为 Babel 的缘故，通过 value 属性并不能获取值，我们可以写成：
 const value = descriptor.initializer && descriptor.initializer();
 ```
+
+## loading
+```
+@loadingWrap(true)
+async handleSelect(params) {
+  await this.props.dispatch({
+    type: 'product_list/setQuerypParams',
+    querypParams: params
+  });
+}
+```
+>loadingWrap
+```
+export function loadingWrap(needHide) {
+
+  const defaultLoading = (
+    <div className="toast-loading">
+      <Loading className="loading-icon"/>
+      <div>加载中...</div>
+    </div>
+  );
+
+  return function (target, property, descriptor) {
+    const raw = descriptor.value;
+    
+    descriptor.value = function (...args) {
+      Toast.info(text || defaultLoading, 0, null, true);
+      const res = raw.apply(this, args);
+      
+      if (needHide) {
+        if (get('finally')(res)) {
+          res.finally(() => {
+            Toast.hide();
+          });
+        } else {
+          Toast.hide();
+        }
+      }
+    };
+    return descriptor;
+  };
+}
+```

@@ -28,8 +28,6 @@ startBtn.classList.add('qqq')
 安装wrk
 https://blog.csdn.net/qq_41030861/article/details/90553510
 
-6期大佬总结面试
-https://yhlben.github.io/interview/2019-9.html
 
 https://juejin.im/post/5c9c3989e51d454e3a3902b6#heading-16
 
@@ -55,3 +53,12 @@ https://juejin.im/post/5d9bf530518825427b27639d#heading-0
 
 灵活运用JS开发技巧
 https://juejin.im/post/5cc7afdde51d456e671c7e48
+
+react项目
+https://github.com/lmjben/cdfang-spider
+
+大牛任博的笔记
+https://www.studyfe.cn/
+
+简历模版  找群友要账号
+https://www.500d.me/search/?keyword=web%E5%89%8D%E7%AB%AF
