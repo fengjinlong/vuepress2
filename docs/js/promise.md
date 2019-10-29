@@ -1,4 +1,4 @@
-# 基础
+# Promise基础
 ## 1 Promise 的含义
 > Promise 是异步编程的一种解决方案，比传统的解决方案——回调函数和事件——更合理和更强大。
 
@@ -414,7 +414,7 @@ console.log('one');
 ## 10 Promise.reject()
 >Promise.reject(reason)方法也会返回一个新的 Promise 实例，该实例的状态为rejected。
 
-## 应用
+## 11 应用
 
 > Generator 函数与 Promise 的结合
 >使用 Generator 函数管理流程，遇到异步操作的时候，通常返回一个Promise对象。
@@ -454,9 +454,8 @@ run(g);
 ```
 > 上面代码的 Generator 函数g之中，有一个异步操作getFoo，它返回的就是一个Promise对象。函数run用来处理这个Promise对象，并调用下一个next方法。
 
-# 原理及实现
 
-## 执行特点
+## 12 执行特点
 >+ Promise 是一个构造函数，接受函数作为参数(resolve(),reject())
 >+ Promise 对象有三种状态 pending(进行中), fulfilled(成功), rejected(失败)
 >+ Promise 从 pending 变为 fulfilled 过程是成功的过程可以执行回调函数 resolve()
@@ -465,7 +464,7 @@ run(g);
 >+ Promise 状态改变时 then 方法支持多次链式调用
 >+ Promise 如果不设置回调函数内部会抛异常
 
-## 定义构造函数
+## 13 定义构造函数
 ```
 /** * 封装判断参数是够是函数 */ 
 function isFunction (fn) {

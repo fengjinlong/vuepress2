@@ -51,6 +51,7 @@ module.exports = {
           '/js/es6',
           '/js/语言精髓',
           '/js/promise',
+          '/js/promise思路',
           '/js/深拷贝'
         ]
       },
