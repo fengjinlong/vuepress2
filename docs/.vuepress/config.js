@@ -131,6 +131,14 @@ module.exports = {
         ]
       },
       {
+        title: 'webpack',
+        collapsable: true,
+        children: [
+          ['/webpack/搭建vue.md', '搭建vue'],
+          ['/webpack/优化.md', '优化']
+        ]
+      },
+      {
         title: 'mac',
         collapsable: true,
         children: [
