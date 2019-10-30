@@ -62,3 +62,6 @@ https://www.studyfe.cn/
 
 简历模版  找群友要账号
 https://www.500d.me/search/?keyword=web%E5%89%8D%E7%AB%AF
+
+掘金er
+https://juejin.im/user/58d8cd0644d9040069433edb

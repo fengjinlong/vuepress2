@@ -1,86 +1,40 @@
-const isType = (obj, type) => {
-  // function 
-  if (typeof obj !== 'object') return false;
-  const typeString = Object.prototype.toString.call(obj);
-  let flag;
-  switch (type) {
-    case 'Array':
-      flag = typeString === '[object Array]';
-      break;
-    case 'Date':
-      flag = typeString === '[object Date]';
-      break;
-    case 'RegExp':
-      flag = typeString === '[object RegExp]';
-      break;
-    default:
-      flag = false;
-  }
-  return flag;
-};
-// console.log(isType(new Date(), 'Date'))
+let f1 = () => {}
+let f2 = () => {}
+let f3 = () => {}
+let _events = new Map()
+_events.set('f',[f1, f2, f3])
+// _events.set('f',f1,f2)
+let fun = function(type, fn) {
+  const handler = _events.get(type); // 获取对应事件名称的函数清单
 
-
-/**
-* deep clone
-* @param  {[type]} parent object 需要进行克隆的对象
-* @return {[type]}        深克隆后的对象
-*/
-const clone = parent => {
-  // 维护两个储存循环引用的数组
-  const parents = [];
-  const children = [];
-
-  const _clone = parent => {
-    // null
-    if (parent === null) return null;
-    // 原始类型
-    if (typeof parent !== 'object') return parent;
-
-    let child, proto;
-
-    if (isType(parent, 'Array')) {
-      // 对数组做特殊处理
-      child = [];
-    } else if (isType(parent, 'RegExp')) {
-      // 对正则对象做特殊处理
-      // child = new RegExp(parent.source, getRegExp(parent));
-      child = new RegExp(parent.source, parent.flags);
-      console.log(parent.lastIndex)
-      if (parent.lastIndex) child.lastIndex = parent.lastIndex;
-    } else if (isType(parent, 'Date')) {
-      // 对Date对象做特殊处理
-      child = new Date(parent.getTime());
+  // 如果是函数,说明只被监听了一次
+  if (handler && typeof handler === 'function') {
+    _events.delete(type, fn);
+  } else {
+    let postion;
+    // 如果handler是数组,说明被监听多次要找到对应的函数
+    for (let i = 0; i < handler.length; i++) {
+      if (handler[i] === fn) {
+        postion = i;
+        break
+      } else {
+        postion = -1;
+      }
+    }
+    // 如果找到匹配的函数,从数组中清除
+    if (postion !== -1) {
+      // 找到数组对应的位置,直接清除此回调
+      handler.splice(postion, 1);
+      // 如果清除后只有一个函数,那么取消数组,以函数形式保存
+      if (handler.length === 1) {
+        _events.set(type, handler[0]);
+      }
     } else {
-      // 处理对象原型
-      proto = Object.getPrototypeOf(parent);
-      // 利用Object.create切断原型链
-      child = Object.create(proto);
+      return this;
     }
-
-    // 处理循环引用
-    const index = parents.indexOf(parent);
-
-    if (index != -1) {
-      // 如果父数组存在本对象,说明之前已经被引用过,直接返回此对象
-      return children[index];
-    }
-    parents.push(parent);
-    children.push(child);
-
-    for (let i in parent) {
-      // 递归
-      child[i] = _clone(parent[i]);
-    }
-
-    return child;
-  };
-  return _clone(parent);
+  }
 };
-var regex = new RegExp(/xyz/, 'i');
-regex.lastIndex = 2;
-// var regex = /hello\d/y;
-// var a = [1,2,3]
-var b = clone(regex)
-// a[0] = 4
-console.log(b)
+fun('f', f2)
+fun('f', f1)
+fun('f', f3)
+console.log(_events)

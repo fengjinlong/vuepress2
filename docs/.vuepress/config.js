@@ -46,6 +46,7 @@ module.exports = {
           '/js/defineProperty',
           '/js/Decorator',
           '/js/Decorator2',
+          '/js/eventBus',
           '/js/模块',
           '/js/es5',
           '/js/es6',
