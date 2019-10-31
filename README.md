@@ -65,3 +65,13 @@ https://www.500d.me/search/?keyword=web%E5%89%8D%E7%AB%AF
 
 掘金er
 https://juejin.im/user/58d8cd0644d9040069433edb
+
+webpack4 多页面配置demo
+https://github.com/jgchenu/webpack4-multi-page-application
+
+
+
+网站性能优化实战——从12.67s到1.06s的故事
+https://juejin.im/post/5b0b7d74518825158e173a0c
+网站性能优化实战（二）——深入浅出浏览器渲染机制
+https://juejin.im/post/5b6fdeb3e51d45666f79875a
