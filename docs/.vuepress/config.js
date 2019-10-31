@@ -153,6 +153,7 @@ module.exports = {
         collapsable: true,
         children: [
           ['/react/demo', 'demo'],
+          ['/react/redux中间件', 'redux中间件'],
           ['/react/hookBase', 'hookBase']
         ]
       },
