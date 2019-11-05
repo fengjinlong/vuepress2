@@ -38,3 +38,10 @@ fun('f', f2)
 fun('f', f1)
 fun('f', f3)
 console.log(_events)
+
+// checkForNestedUpdates 判断是否有无限循环的 update
+// markUpdateTimeFromFiberToRoot 找到 rootFiber 并遍历更新子节点的 expirationTime
+// checkForInterruption 判断是否有高优先级任务打断当前正在执行的任务
+// schedulePendingInteractions 立即执行调度任务
+// scheduleCallbackForRoot 异步任务立即执行调度任务
+// rootsWithPendingDiscreteUpdates 得到 DiscreteTime
