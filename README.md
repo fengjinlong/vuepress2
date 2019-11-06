@@ -65,6 +65,8 @@ https://www.500d.me/search/?keyword=web%E5%89%8D%E7%AB%AF
 
 掘金er
 https://juejin.im/user/58d8cd0644d9040069433edb
+react 面试题
+https://juejin.im/post/5d5f44dae51d4561df7805b4#heading-17
 
 webpack4 多页面配置demo
 https://github.com/jgchenu/webpack4-multi-page-application
@@ -84,3 +86,8 @@ https://zhuanlan.zhihu.com/p/64354455
 
 「前端进阶」高性能渲染十万条数据(时间分片)
 https://juejin.im/post/5d76f469f265da039a28aff7#heading-1
+
+(建议收藏)原生JS灵魂之问, 请问你能接得住几个？(上)
+https://juejin.im/post/5dac5d82e51d45249850cd20
+(建议精读)原生JS灵魂之问(中)，检验自己是否真的熟悉JavaScript？
+https://juejin.im/post/5dbebbfa51882524c507fddb#heading-1
