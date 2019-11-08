@@ -136,3 +136,77 @@ function Counter(){
 3. 更深入的优化：
 >+ useCallback：接收一个内联回调函数参数和一个依赖项数组（子组件依赖父组件的状态，即子组件会使用到父组件的值） ，useCallback 会返回该回调函数的 memoized 版本，该回调函数仅在某个依赖项改变时才会更新
 >- useMemo：把创建函数和依赖项数组作为参数传入 useMemo，它仅会在某个依赖项改变时才重新计算 memoized 值。这种优化有助于避免在每次渲染时都进行高开销的计算
+
+## 6 useReducer
+
+>+ useReducer 和 redux 中 reducer 很像
+>- useState 内部就是靠 useReducer 来实现的
+>+ useState 的替代方案，它接收一个形如 (state, action) => newState 的 reducer，并返回当前的 state 以及与其配套的 dispatch 方法
+>- 在某些场景下，useReducer 会比 useState 更适用，例如 state 逻辑较复杂且包含多个子值，或者下一个 state 依赖于之前的 state 等
+
+## 7 useContext
+
+>+ 接收一个 context 对象（React.createContext 的返回值）并返回该 context 的当前值
+>- 当前的 context 值由上层组件中距离当前组件最近的 <MyContext.Provider> 的 value prop 决定
+>+ 当组件上层最近的 <MyContext.Provider> 更新时，该 Hook 会触发重渲染，并使用最新传递给 MyContext provider 的 context value 值
+>- useContext(MyContext) 相当于 class 组件中的 static contextType = MyContext 或者 <MyContext.Consumer>
+>+ useContext(MyContext) 只是让你能够读取 context 的值以及订阅 context 的变化。你仍然需要在上层组件树中**使用 <MyContext.Provider> 来为下层组件提供 context**
+
+## 8 useEffect
+> useEffect 接收一个函数，该函数会在组件渲染到屏幕之后才执行，该函数有要求：要么返回一个能清除副作用的函数，要么就不返回任何内容
+```
+function Counter(){
+    const [number,setNumber] = useState(0);
+    // useEffect里面的这个函数会在第一次渲染之后和更新完成后执行
+    // 相当于 componentDidMount 和 componentDidUpdate:
+    useEffect(() => {
+        document.title = `你点击了${number}次`;
+    });
+    return (
+        <>
+            <p>{number}</p>
+            <button onClick={()=>setNumber(number+1)}>+</button>
+        </>
+    )
+}
+```
+```
+useEffect(()=>{
+        console.log('开启一个新的定时器')
+        let $timer = setInterval(()=>{
+            setNumber(number=>number+1);
+        },1000);
+        // useEffect 如果返回一个函数的话，该函数会在组件卸载和更新时调用
+        // useEffect 在执行副作用函数之前，会先调用上一次返回的函数
+        // 如果要清除副作用，要么返回一个清除副作用的函数
+       /*  return ()=>{
+            console.log('destroy effect');
+            clearInterval($timer);
+        } */
+    });
+```
+
+> 跳过 effect 进行性能优化
+
+>+ 依赖项数组控制着 useEffect 的执行
+>- 如果某些特定值在两次重渲染之间没有发生变化，你可以通知 React 跳过对 effect 的调用，只要传递数组作为 useEffect 的第二个可选参数即可
+>+ 如果想执行只运行一次的 effect（仅在组件挂载和卸载时执行），可以传递一个空数组（[]）作为第二个参数。这就告诉 React 你的 effect 不依赖于 props 或 state 中的任何值，所以它永远都不需要重复执行
+>- 推荐启用 eslint-plugin-react-hooks 中的 exhaustive-deps 规则。此规则会在添加错误依赖时发出警告并给出修复建议。
+
+> 使用多个 Effect 实现关注点分离
+>+ Hook 允许我们按照代码的用途分离他们， 而不是像生命周期函数那样。React 将按照 effect 声明的顺序依次调用组件中的 每一个 effect。
+
+## 9 常见问题
+> 使用 eslint-plugin-react-hooks 来检查代码错误，给出提示
+```
+{
+  "plugins": ["react-hooks"],
+  // ...
+  "rules": {
+    "react-hooks/rules-of-hooks": 'error',// 检查 Hook 的规则
+    "react-hooks/exhaustive-deps": 'warn' // 检查 effect 的依赖
+  }
+}
+
+```
+<!-- https://juejin.im/post/5dbbdbd5f265da4d4b5fe57d#heading-29 -->
