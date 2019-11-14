@@ -89,6 +89,13 @@ module.exports = {
         ]
       },
       {
+        title: 'docker',
+        collapsable: true,
+        children: [
+          ['/docker/demo', '基础demo']
+        ]
+      },
+      {
         title: '性能',
         collapsable: true,
         children: [
