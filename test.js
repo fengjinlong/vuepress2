@@ -1,106 +1,36 @@
-let f1 = () => {}
-let f2 = () => {}
-let f3 = () => {}
-let _events = new Map()
-_events.set('f',[f1, f2, f3])
-// _events.set('f',f1,f2)
-let fun = function(type, fn) {
-  const handler = _events.get(type); // 获取对应事件名称的函数清单
-
-  // 如果是函数,说明只被监听了一次
-  if (handler && typeof handler === 'function') {
-    _events.delete(type, fn);
-  } else {
-    let postion;
-    // 如果handler是数组,说明被监听多次要找到对应的函数
-    for (let i = 0; i < handler.length; i++) {
-      if (handler[i] === fn) {
-        postion = i;
-        break
-      } else {
-        postion = -1;
-      }
-    }
-    // 如果找到匹配的函数,从数组中清除
-    if (postion !== -1) {
-      // 找到数组对应的位置,直接清除此回调
-      handler.splice(postion, 1);
-      // 如果清除后只有一个函数,那么取消数组,以函数形式保存
-      if (handler.length === 1) {
-        _events.set(type, handler[0]);
-      }
-    } else {
-      return this;
-    }
+Function.prototype.bind = function (thisObj) {
+  if (typeof this != 'function') {
+    throw new TypeError('只能对函数使用 bind 方法')
   }
-};
-fun('f', f2)
-fun('f', f1)
-fun('f', f3)
-console.log(_events)
-
-// checkForNestedUpdates 判断是否有无限循环的 update
-// markUpdateTimeFromFiberToRoot 找到 rootFiber 并遍历更新子节点的 expirationTime
-// checkForInterruption 判断是否有高优先级任务打断当前正在执行的任务
-// schedulePendingInteractions 立即执行调度任务
-// scheduleCallbackForRoot 异步任务立即执行调度任务
-// rootsWithPendingDiscreteUpdates 得到 DiscreteTime
-
-
-import React, { useState } from "react";
-import ReactDOM from "react-dom";
-
-function Child1(porps) {
-  console.log(porps);
-  const { num, handleClick } = porps;
-  return (
-    <div
-      onClick={() => {
-        handleClick(num + 1);
-      }}
-    >
-      child
-    </div>
-  );
+  const self = this
+  const args = [].slice.call(arguments, 1)
+  return function () {
+    self.apply(thisObj, args.concat([].slice.apply(arguments)))
+  }
 }
 
-function Child2(porps) {
-  // console.log(porps);
-  const { text, handleClick } = porps;
-  return (
-    <div>
-      child2
-      <Grandson text={text} handleClick={handleClick} />
-    </div>
-  );
+new (function () {
+  self.apply(thisObj, args.concat([].slice.apply(arguments)))
+})()
+
+function Cat() {
+  this.name = 'Tom'
+  
 }
 
-function Grandson(porps) {
-  console.log(porps);
-  const { text, handleClick } = porps;
-  return (
-    <div
-      onClick={() => {
-        handleClick(text + 1);
-      }}
-    >
-      grandson
-    </div>
-  );
+function Mouse() {
+  this.name = 'Jerry'
+  return ['Jerry']
 }
 
-function Parent() {
-  let [num, setNum] = useState(0);
-  let [text, setText] = useState(1);
-
-  return (
-    <div>
-      <Child1 num={num} handleClick={setNum} />
-      <Child2 text={text} handleClick={setText} />
-    </div>
-  );
+function Mouse1() {
+  this.name = 'Jerry1'
+  return 11
 }
 
-const rootElement = document.getElementById("root");
-ReactDOM.render(<Parent />, rootElement);
-
+const cat = new Cat()
+const mouse = new Mouse()
+const mouse1 = new Mouse1()
+console.log(cat) // Cat { name: 'Tom' }
+console.log(mouse) // [ 'Jerry' ]
+console.log(mouse1) // [ 'Jerry' ]

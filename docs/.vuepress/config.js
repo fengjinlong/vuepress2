@@ -48,6 +48,7 @@ module.exports = {
           '/js/Decorator2',
           '/js/eventBus',
           '/js/模块',
+          '/js/bind&new',
           '/js/es5',
           '/js/es6',
           '/js/语言精髓',
