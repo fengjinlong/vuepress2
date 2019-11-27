@@ -89,3 +89,37 @@ docker_demo为镜像名称
 ```
 docker run -d -p 9000:3000 docker_demo
 ```
+
+## ssh 启动
+
+1. Dockerfile
+```
+FROM node
+LABEL name="vue-back"
+LABEL version="1.0"
+COPY . /app
+WORKDIR /app
+RUN npm install
+EXPOSE 3000
+CMD npm start
+```
+
+2. ssh node
+```
+#!/bin/bash
+WORK_PATH='/usr/projects/vue-front'
+cd $WORK_PATH
+echo "清除老代码"
+git reset --hard origin/master
+git clean -f
+echo "拉取新代码"
+git pull origin master
+npm run build
+echo "开始执行构建"
+docker build -t vue-front:1.0 .
+echo "停止旧容器并删除旧容器"
+docker stop vue-front-container
+docker rm vue-front-container
+echo "启动新容器"
+docker container run -p 8080:8080 --name vue-front-container -d vue-front:1.0
+```
