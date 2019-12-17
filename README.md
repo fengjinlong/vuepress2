@@ -98,8 +98,6 @@ https://juejin.im/post/5dbbdbd5f265da4d4b5fe57d#heading-1
 关于JS中一些重要的api实现, 巩固你的原生JS功底
 https://juejin.im/post/5d635566e51d4561e224a360
 
-杂货店react系列
-https://zhuanlan.zhihu.com/p/66166173
 
 大佬全系列
 https://lmjben.github.io/blog/library-react.html
@@ -116,3 +114,9 @@ https://juejin.im/post/5dde545bf265da06074f13cc#heading-16
 
 hook deme
 https://github.com/lichenbuliren/react-prize/tree/master/
+
+https://lmjben.github.io/blog/
+
+http://huziketang.mangojuice.top/books/react/lesson36
+
+https://github.com/brickspert/blog/issues/22
